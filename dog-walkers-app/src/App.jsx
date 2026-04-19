@@ -1,5 +1,6 @@
 import './App.css';
 import ghost from './assets/ghost-img-dog.jpg';
+import WalkerCard from './components/WalkerCard.jsx';
 
 const App = () => {
   return (
@@ -7,7 +8,7 @@ const App = () => {
       <header className="hero-card">
         <div className="brand-row">
           <span className="brand-badge">🐾</span>
-          <p className="brand-name">Dog Walkers</p>
+          <p className="brand-name">Paw Walkers</p>
         </div>
 
         <p className="eyebrow">Trusted local dog care</p>
@@ -33,11 +34,19 @@ const App = () => {
 
       <main className="app-main">
         <section className="panel">
-          <h2 className="section-title">Welcome</h2>
-          <p className="section-text">
-            We are building your mobile-first dog walking app one step at a
-            time.
-          </p>
+          <div className="section-heading">
+            <div>
+              <p className="section-eyebrow">Available Paw Walkers</p>
+              <h2 className="section-title">Meet your trusted dog walkers</h2>
+            </div>
+
+            <p className="section-text">
+              Browse a few featured walkers and compare experience, care style,
+              and pricing.
+            </p>
+          </div>
+
+          <WalkerCard />
         </section>
       </main>
     </div>
