@@ -28,7 +28,7 @@ const App = () => {
         </div>
 
         <div className="hero-image-wrapper">
-          <img src={ghost} alt="A happy dog outdoors" className="hero-image" />
+          <img src={ghost} alt="A happy dog indoors" className="hero-image" />
         </div>
       </header>
 
@@ -46,7 +46,16 @@ const App = () => {
             </p>
           </div>
 
-          <WalkerCard />
+          <WalkerCard
+            image="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=900&q=80"
+            role="Top Rated Walker"
+            name="Amy Lynn"
+            price="$24"
+            bio="Friendly and dependable walker with 5 years of experience caring for energetic dogs, puppies, and senior pets."
+            tagOne="30 min walks"
+            tagTwo="Puppy Care"
+            tagThree="Downtown"
+          />
         </section>
       </main>
     </div>
