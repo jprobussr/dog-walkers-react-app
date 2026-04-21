@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 const App = () => {
   const [selectedWalker, setSelectedWalker] = useState(walkers[0]);
+  const [selectedWalk, setSelectedWalk] = useState('30 Minute Walk');
 
   return (
     <div className="app-shell">
@@ -69,35 +70,61 @@ const App = () => {
           })}
         </section>
 
-            <section className="panel">
-              <p className="section-eyebrow">Selected Walker</p>
-              <h2 className="section-title">
-                {selectedWalker.name}
-              </h2>
-              <p className="section-text">
-                {selectedWalker.role}
-              </p>
-              <p className="section-text">
-                {selectedWalker.bio}
-              </p>
+        <section className="panel">
+          <p className="section-eyebrow">Selected Walker</p>
+          <h2 className="section-title">{selectedWalker.name}</h2>
+          <p className="section-text">{selectedWalker.role}</p>
+          <p className="section-text">{selectedWalker.bio}</p>
 
-              <ul className="selected-tags">
-                <li>
-                  {selectedWalker.tagOne}
-                </li>
-                <li>
-                  {selectedWalker.tagTwo}
-                </li>
-                <li>
-                  {selectedWalker.tagThree}
-                </li>
-              </ul>
-              
-              <p className="selected-price">
-                {selectedWalker.price} per walk
-              </p>
-            </section>
+          <ul className="selected-tags">
+            <li>{selectedWalker.tagOne}</li>
+            <li>{selectedWalker.tagTwo}</li>
+            <li>{selectedWalker.tagThree}</li>
+          </ul>
 
+          <p className="selected-price">{selectedWalker.price} per walk</p>
+        </section>
+
+        <section className="panel">
+          <p className="section-eyebrow">Booking</p>
+          <h2 className="section-title">Book your next walk</h2>
+          <p className="section-text">
+            You are booking <strong>{selectedWalker.name}</strong> for a{' '}
+            <strong>{selectedWalk}</strong>.
+          </p>
+
+          <div className="walk-options">
+            <button
+              className={
+                selectedWalk === '30 Minute Walk'
+                  ? 'walk-option walk-option-selected'
+                  : 'walk-option'
+              }
+              type="button"
+              onClick={() => setSelectedWalk('30 Minute Walk')}
+            >
+              30 Minute Walk
+            </button>
+            <button
+              className={
+                selectedWalk === '45 Minute Walk'
+                  ? 'walk-option walk-option-selected'
+                  : 'walk-option'
+              }
+              type="button"
+              onClick={() => setSelectedWalk('45 Minute Walk')}
+            >
+              45 Minute Walk
+            </button>
+            <button
+              className={selectedWalk === '60 Minute Walk' ? 'walk-option walk-option-selected' : 'walk-option'}
+              type="button"
+              onClick={() => setSelectedWalk('60 Minute Walk')}
+            >
+              60 Minute Walk
+            </button>
+          </div>
+        </section>
       </main>
     </div>
   );
