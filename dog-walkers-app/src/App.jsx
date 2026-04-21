@@ -1,8 +1,15 @@
 import './App.css';
 import ghost from './assets/ghost-img-dog.jpg';
 import WalkerCard from './components/WalkerCard.jsx';
+import { walkers } from './walker.js';
+
+
 
 const App = () => {
+  const firstWalker = walkers[0];
+
+  console.log(firstWalker)
+
   return (
     <div className="app-shell">
       <header className="hero-card">
@@ -46,16 +53,22 @@ const App = () => {
             </p>
           </div>
 
-          <WalkerCard
-            image="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=900&q=80"
-            role="Top Rated Walker"
-            name="Amy Lynn"
-            price="$24"
-            bio="Friendly and dependable walker with 5 years of experience caring for energetic dogs, puppies, and senior pets."
-            tagOne="30 min walks"
-            tagTwo="Puppy Care"
-            tagThree="Downtown"
-          />
+        {walkers.map((walker) => {
+          return (
+            <WalkerCard
+              key={walker.id}
+              image={walker.image}
+              role={walker.role}
+              name={walker.name}
+              price={walker.price}
+              bio={walker.bio}
+              tagOne={walker.tagOne}
+              tagTwo={walker.tagTwo}
+              tagThree={walker.tagThree}
+            />
+          )
+        })}
+         
         </section>
       </main>
     </div>
