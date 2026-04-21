@@ -320,3 +320,26 @@ select {
   background: var(--accent-hover);
   transform: translateY(-1px);
 }
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  list-style: none;
+}
+
+.selected-tags li {
+  padding: 0.4rem 0.7rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+
+.selected-price {
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+}

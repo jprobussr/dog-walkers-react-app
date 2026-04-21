@@ -26,7 +26,7 @@ const WalkerCard = (props) => {
           
         </ul>
 
-        <button className="walker-card-button">View Details</button>
+        <button onClick={props.onSelect} className="walker-card-button">View Details</button>
       </div>
     </article>
   );

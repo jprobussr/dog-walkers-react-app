@@ -2,13 +2,10 @@ import './App.css';
 import ghost from './assets/ghost-img-dog.jpg';
 import WalkerCard from './components/WalkerCard.jsx';
 import { walkers } from './walker.js';
-
-
+import { useState } from 'react';
 
 const App = () => {
-  const firstWalker = walkers[0];
-
-  console.log(firstWalker)
+  const [selectedWalker, setSelectedWalker] = useState(walkers[0]);
 
   return (
     <div className="app-shell">
@@ -53,23 +50,53 @@ const App = () => {
             </p>
           </div>
 
-        {walkers.map((walker) => {
-          return (
-            <WalkerCard
-              key={walker.id}
-              image={walker.image}
-              role={walker.role}
-              name={walker.name}
-              price={walker.price}
-              bio={walker.bio}
-              tagOne={walker.tagOne}
-              tagTwo={walker.tagTwo}
-              tagThree={walker.tagThree}
-            />
-          )
-        })}
-         
+          {walkers.map((walker) => {
+            return (
+              <WalkerCard
+                key={walker.id}
+                image={walker.image}
+                role={walker.role}
+                name={walker.name}
+                price={walker.price}
+                bio={walker.bio}
+                tagOne={walker.tagOne}
+                tagTwo={walker.tagTwo}
+                tagThree={walker.tagThree}
+                onSelect={() => setSelectedWalker(walker)}
+              />
+            );
+          })}
         </section>
+
+            <section className="panel">
+              <p className="section-eyebrow">Selected Walker</p>
+              <h2 className="section-title">
+                {selectedWalker.name}
+              </h2>
+              <p className="section-text">
+                {selectedWalker.role}
+              </p>
+              <p className="section-text">
+                {selectedWalker.bio}
+              </p>
+
+              <ul className="selected-tags">
+                <li>
+                  {selectedWalker.tagOne}
+                </li>
+                <li>
+                  {selectedWalker.tagTwo}
+                </li>
+                <li>
+                  {selectedWalker.tagThree}
+                </li>
+              </ul>
+              
+              <p className="selected-price">
+                {selectedWalker.price} per walk
+              </p>
+            </section>
+
       </main>
     </div>
   );
