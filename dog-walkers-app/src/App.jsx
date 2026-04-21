@@ -63,6 +63,7 @@ const App = () => {
                 tagTwo={walker.tagTwo}
                 tagThree={walker.tagThree}
                 onSelect={() => setSelectedWalker(walker)}
+                isSelected={selectedWalker.id === walker.id}
               />
             );
           })}

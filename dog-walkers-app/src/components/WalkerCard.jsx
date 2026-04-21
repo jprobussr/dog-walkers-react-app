@@ -1,6 +1,6 @@
 const WalkerCard = (props) => {
   return (
-    <article className="walker-card">
+    <article className={props.isSelected ? 'walker-card walker-card-selected' : 'walker-card'}>
       <div className="walker-card-image-wrapper">
         <img src={props.image} alt={props.name} className="walker-card-image" />
       </div>

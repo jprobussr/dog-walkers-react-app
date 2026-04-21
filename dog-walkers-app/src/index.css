@@ -227,6 +227,7 @@ select {
   border: 1px solid var(--border);
   border-radius: 1.25rem;
   overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 .walker-card-image-wrapper {
@@ -342,4 +343,10 @@ select {
   margin-top: 1rem;
   font-weight: 700;
   font-size: 1rem;
+}
+
+.walker-card-selected {
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.25);
+  transform: translateY(-2px);
 }
