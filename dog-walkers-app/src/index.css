@@ -381,3 +381,34 @@ select {
   color: var(--text);
   box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
 }
+
+.confirm-booking-button {
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.95rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.confirm-booking-button:hover,
+.confirm-booking-button:focus-visible {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.booking-success {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(34, 197, 94, 0.12);
+  color: #bbf7d0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

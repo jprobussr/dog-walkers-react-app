@@ -7,6 +7,7 @@ import { useState } from 'react';
 const App = () => {
   const [selectedWalker, setSelectedWalker] = useState(walkers[0]);
   const [selectedWalk, setSelectedWalk] = useState('30 Minute Walk');
+  const [isBooked, setIsBooked] = useState(false);
 
   return (
     <div className="app-shell">
@@ -117,13 +118,32 @@ const App = () => {
               45 Minute Walk
             </button>
             <button
-              className={selectedWalk === '60 Minute Walk' ? 'walk-option walk-option-selected' : 'walk-option'}
+              className={
+                selectedWalk === '60 Minute Walk'
+                  ? 'walk-option walk-option-selected'
+                  : 'walk-option'
+              }
               type="button"
               onClick={() => setSelectedWalk('60 Minute Walk')}
             >
               60 Minute Walk
             </button>
           </div>
+
+          <button
+            className="confirm-booking-button"
+            type="button"
+            onClick={() => setIsBooked(true)}
+          >
+            Confirm Booking
+          </button>
+
+          {isBooked && (
+            <p className="booking-success">
+              Booking confirmed with <strong>{selectedWalker.name}</strong> for
+              a <strong>{selectedWalk}</strong>. 🐾
+            </p>
+          )}
         </section>
       </main>
     </div>
