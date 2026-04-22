@@ -64,7 +64,10 @@ const App = () => {
                 tagOne={walker.tagOne}
                 tagTwo={walker.tagTwo}
                 tagThree={walker.tagThree}
-                onSelect={() => setSelectedWalker(walker)}
+                onSelect={() => {
+                  setSelectedWalker(walker);
+                  setIsBooked(false);
+                }}
                 isSelected={selectedWalker.id === walker.id}
               />
             );
@@ -134,8 +137,9 @@ const App = () => {
             className="confirm-booking-button"
             type="button"
             onClick={() => setIsBooked(true)}
+            disabled={isBooked}
           >
-            Confirm Booking
+            {isBooked ? 'Booked' : 'Confirm Booking'}
           </button>
 
           {isBooked && (
